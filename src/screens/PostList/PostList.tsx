@@ -1,6 +1,5 @@
 import React from "react";
 import ReactLoading from "react-loading";
-import { useLocation } from 'react-router';
 import { View, FlatList, RefreshControl, StyleSheet } from "react-native";
 
 import colors from "../../../assets/theme/colors";
@@ -15,13 +14,9 @@ export const PostList = (props) => {
   const visibleItems = data
     ? data.filter(
         (item) =>
-          !(item.private && loggedInAs && item.createdBy !== loggedInAs.id),
+          !(item.private && loggedInAs && item.createdBy !== loggedInAs.id)
       )
     : [];
-    const location = useLocation();
-useEffect(() => {
-  loggedInAs = store.getState().auth.loggedInAs;
-}, [location.key])
 
   return (
     <View style={styles.container}>
