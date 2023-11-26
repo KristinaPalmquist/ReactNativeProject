@@ -1,0 +1,18 @@
+{
+  "build": {
+    "ForumRomana": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "ForumRomana2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "ForumRomana3": {
+      "developmentClient": true
+    },
+    "production": {}
+  }
+}
