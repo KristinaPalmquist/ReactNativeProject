@@ -72,6 +72,11 @@ export const UserItem = ({ navigation, item, handleCallback }) => {
           for (const post of posts) {
             if (post.createdBy === user.id) {
               deletePost(post);
+              for (const like of likes) {
+                if (like.postId === post.id) {
+                  deleteLike(like);
+                }
+              }
             }
           }
           if (user.id === loggedInAs.id) {

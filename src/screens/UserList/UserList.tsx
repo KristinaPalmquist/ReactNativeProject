@@ -81,7 +81,6 @@ const UserList = ({ navigation }) => {
               if (post.createdBy === selectedUserId) {
                 deletePost(post);
               }
-
               for (const like of likes) {
                 if (like.postId === post.id) {
                   deleteLike(like);
@@ -90,7 +89,6 @@ const UserList = ({ navigation }) => {
             }
             for (const user of users) {
               if (user.id === selectedUserId) {
-                console.log(user);
                 if (loggedInAs && user.id === loggedInAs.id) {
                   dispatch(logOut(user));
                 }
